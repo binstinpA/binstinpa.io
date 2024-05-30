@@ -1,0 +1,115 @@
+Pour adapter le CSS afin d'améliorer la présentation des vidéos sur ta page web, tu peux ajouter quelques styles spécifiques pour les vidéos et leurs titres. Voici comment tu pourrais modifier le fichier CSS `tasoeur-pr-25oct2023.css` pour inclure ces changements :
+
+```css
+/* tasoeur-pr-25oct2023.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00A550;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background-color: #444;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #00A550;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Styles ajoutés pour les vidéos */
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.video-container a {
+    margin: 10px;
+    text-align: center;
+    width: 320px; /* Largeur fixe pour chaque vidéo */
+}
+
+.video-container img {
+    border-radius: 5px; /* Arrondit les coins des images */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Ombre portée pour les images */
+}
+
+.video-container p {
+    color: #fff; /* Couleur du texte pour les titres des vidéos */
+    margin-top: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+```
+
+Dans ce CSS, j'ai ajouté une classe `.video-container` pour gérer la disposition des vidéos sur ta page. Chaque lien vidéo (`<a>`) avec son image (`<img>`) et son titre (`<p>`) est contenu dans un élément qui peut être stylisé séparément. Les vidéos seront affichées en ligne avec un espacement entre elles, et les images auront des coins arrondis et une ombre portée pour un look plus raffiné.
+
+Assure-toi de rajouter la classe `.video-container` autour de tes liens vidéo dans ton fichier boom HTML pour appliquer ces styles :
+
+```boom html
+<div class="video-container">
+    <!-- Lien vers la vidéo 1 -->
+    <a href="{{ url_for('static', filename='videos/01.mp4') }}" target="_blank">
+        <img src="{{ url_for('static', filename='images/01.jpg') }}" alt="Vidéo 1" style="width:320px; height:240px;">
+        <p>Vidéo 1</p>
+    </a>
+    
+    <!-- Lien vers la vidéo 2 -->
+    <a href="{{ url_for('static', filename='videos/02.mp4') }}" target="_blank">
+        <img src="{{ url_for('static', filename='images/thumb_video2.jpg') }}" alt="Vidéo 2" style="width:320px; height:240px;">
+        <p>Vidéo 2</p>
+    </a>
+
+    <!-- Plus de vidéos ici -->
+</div>
+```
+
+Cela permettra de rendre la section vidéo de ton site plus attrayante et organisée.

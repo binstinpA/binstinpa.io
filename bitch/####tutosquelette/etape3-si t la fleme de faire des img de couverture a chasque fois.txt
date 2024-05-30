@@ -1,0 +1,48 @@
+Pour créer des liens vers tes vidéos avec des images représentatives (thumbnails) pour chaque vidéo dans ton fichier HTML, tu peux utiliser la balise `<a>` pour le lien et la balise `<img>` pour l'image. Voici comment tu peux le faire :
+
+### Exemple HTML avec Liens et Images pour Vidéos
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page de Vidéos</title>
+</head>
+<body>
+    <h1>Mes Vidéos</h1>
+    
+    <!-- Lien vers la vidéo 1 -->
+    <a href="{{ url_for('static', filename='videos/video1.mp4') }}" target="_blank">
+        <img src="{{ url_for('static', filename='images/thumb_video1.jpg') }}" alt="Vidéo 1" style="width:320px; height:240px;">
+        <p>Vidéo 1</p>
+    </a>
+    
+    <!-- Lien vers la vidéo 2 -->
+    <a href="{{ url_for('static', filename='videos/video2.mp4') }}" target="_blank">
+        <img src="{{ url_for('static', filename='images/thumb_video2.jpg') }}" alt="Vidéo 2" style="width:320px; height:240px;">
+        <p>Vidéo 2</p>
+    </a>
+
+    <!-- Ajoute plus de liens et images pour les autres vidéos -->
+
+</body>
+</html>
+```
+
+### Explications :
+
+- **`<a href="...">`** : La balise `<a>` crée un lien. L'attribut `href` contient l'URL de la vidéo. Le `target="_blank"` fait en sorte que le lien s'ouvre dans un nouvel onglet du navigateur.
+  
+- **`<img src="..." alt="...">`** : La balise `<img>` affiche une image représentative de la vidéo. L'attribut `src` est l'URL de l'image (thumbnail) et `alt` est une description de l'image pour l'accessibilité.
+
+- **`{{ url_for('static', filename='...') }}`** : Ce code Flask génère l'URL vers des fichiers statiques (comme tes vidéos et images) stockés dans le dossier `static` de ton application Flask.
+
+- **`<p>Vidéo 1</p>`** : Un paragraphe avec un texte descriptif pour chaque vidéo.
+
+### Conseils :
+
+- **Stockage des Fichiers** : Assure-toi que tes vidéos sont stockées dans le dossier `static/videos` et que les images (thumbnails) sont dans `static/images` de ton projet Flask.
+
+- **Personnalisation** : Tu peux personnaliser la taille des images (`style="width:320px; height:240px;"`) selon tes préférences.
+
+En intégrant ces éléments dans ton fichier HTML, tu auras une page qui affiche des images représentatives pour chaque vidéo. Lorsqu'un utilisateur clique sur une image, la vidéo correspondante s'ouvrira dans un nouvel onglet de son navigateur.

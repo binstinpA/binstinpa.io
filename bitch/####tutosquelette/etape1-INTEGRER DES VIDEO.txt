@@ -1,0 +1,67 @@
+Pour afficher plusieurs vidéos en même temps sur ta page HTML avec Flask, tu peux simplement répéter la balise `<video>` pour chaque vidéo que tu souhaites afficher dans ton fichier HTML. Voici comment faire :
+
+1. **Modifie ton Fichier HTML** : Ouvre ou crée un fichier HTML dans le dossier `templates` de ton projet Flask. Par exemple, `multivideos.html`.
+
+2. **Ajoute les Balises Vidéo** : Dans ce fichier, insère plusieurs balises `<video>` avec le chemin de chaque vidéo que tu veux afficher. Voici un exemple avec deux vidéos :
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page avec Vidéo</title>
+</head>
+<body>
+    <h1>la liberter</h1>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/01.mp4') }}" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+    
+    <h2>GENIS</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/02.mp4') }}" type="video/mp4">
+        Ton navigateur ne supporte pas la vidéo.
+    </video>
+
+    <h2>HOMME RICHE</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/03.mp4') }}" type="video/mp4">
+    </video>
+
+    <h2>Vidéo 4</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/video4.mp4') }}" type="video/mp4">
+    </video>
+
+    <h2>Vidéo 5</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/video5.mp4') }}" type="video/mp4">
+    </video>
+
+    <h2>Vidéo 6</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/video6.mp4') }}" type="video/mp4">
+    </video>
+
+    <h2>Vidéo 7</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/video7.mp4') }}" type="video/mp4">
+    </video>
+</body>
+</html>
+
+```
+
+3. **Crée une Route dans Flask** : Assure-toi d'avoir une route Flask définie dans ton fichier Python pour servir cette page HTML.
+
+```python
+@app.route('/mesvideos')
+def mesvideos():
+    return render_template('multivideos.html')
+```
+
+4. **Place tes Vidéos** : Mets toutes tes vidéos dans le dossier `static/videos` dans ton projet Flask.
+
+5. **Visite ta Page** : Après avoir démarré ton serveur Flask, ouvre un navigateur et va à l'URL correspondant à ta route, par exemple `http://localhost:5000/mesvideos`. Tu verras toutes tes vidéos listées sur la page, chacune avec ses propres contrôles de lecture.
+
+En suivant ces étapes, tu peux facilement afficher plusieurs vidéos sur une même page dans ton application Flask.
