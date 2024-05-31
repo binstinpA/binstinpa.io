@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page avec Vidéo</title>
+</head>
+<body>
+    <h1>la liberter</h1>
+
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/01.mp4') }}" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+    
+    <h2>GENIS</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/02.mp4') }}" type="video/mp4">
+        Ton navigateur ne supporte pas la vidéo.
+    </video>
+
+    <h2>HOMME RICHE</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/03.mp4') }}" type="video/mp4">
+    </video>
+
+    <h2>Vidéo 4</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/video4.mp4') }}" type="video/mp4">
+    </video>
+
+    <h2>Vidéo 5</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/video5.mp4') }}" type="video/mp4">
+    </video>
+
+    <h2>Vidéo 6</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/video6.mp4') }}" type="video/mp4">
+    </video>
+
+    <h2>Vidéo 7</h2>
+    <video width="320" height="240" controls>
+        <source src="{{ url_for('static', filename='videos/video7.mp4') }}" type="video/mp4">
+    </video>
+</body>
+</html>

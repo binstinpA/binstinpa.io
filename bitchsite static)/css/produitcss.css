@@ -1,0 +1,72 @@
+/* tasoeur-pr-25oct2023.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00A550; /* Vert comme couleur de fond */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Hauteur minimale de 100% de la fenêtre d'affichage */
+}
+
+.container {
+    width: 80%; /* Largeur du conteneur ajustable selon le besoin */
+    margin: auto;
+    background-color: #fff; /* Fond blanc pour le contenu du produit */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrer le texte à l'intérieur du conteneur */
+}
+
+.product-image {
+    max-width: 100%; /* Pour s'assurer que l'image ne dépasse pas le conteneur */
+    height: auto;
+    display: block; /* Afficher en bloc */
+    margin: 0 auto 20px; /* Marges automatiques pour centrer, avec un espace en bas */
+}
+
+.product-details {
+    /* Styles supplémentaires pour les détails du produit si nécessaire */
+}
+
+header, footer {
+    width: 100%; /* Largeur à 100% */
+    position: fixed; /* Fixer en haut et en bas respectivement */
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #007A3D; /* Vert foncé pour le survol des liens */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
